@@ -78,7 +78,7 @@ def generate_draft(topic: str, model: str = "openai:gpt-4o") -> str:
     ### START CODE HERE ###
 
     # Define your prompt here. A multi-line f-string is typically used for this.
-    prompt = None 
+    prompt = f"Write a complete essay on the following topic: {topic}" 
 
     ### END CODE HERE ###
     
@@ -134,7 +134,7 @@ def reflect_on_draft(draft: str, model: str = "openai:o4-mini") -> str:
     ### START CODE HERE ###
 
     # Define your prompt here. A multi-line f-string is typically used for this.
-    prompt = None 
+    prompt = f"Read the following essay draft and provide constructive feedback on its structure, clarity, and argument strength:\n\n{draft}" 
 
     ### END CODE HERE ###
 
@@ -188,10 +188,14 @@ def revise_draft(original_draft: str, reflection: str, model: str = "openai:gpt-
     ### START CODE HERE ###
 
     # Define your prompt here. A multi-line f-string is typically used for this.
-    prompt = None 
+    prompt = f"Revise the following essay draft based on the feedback provided.\n\nOriginal Draft:\n{original_draft}\n\nFeedback:\n{reflection}\n\nReturn only the revised essay."
 
     # Get a response from the LLM by creating a chat with the client.
-    response = None
+    response = CLIENT.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=1.0,
+    )
 
     ### END CODE HERE ###
 
