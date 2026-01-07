@@ -28,7 +28,7 @@ def test_solution():
     print(f"Prompt sent: {prompt_sent}")
     print(f"Model used: {model_used}")
     assert f"topic: {topic}" in prompt_sent
-    assert model_used == "google:gemini-1.5-flash"
+    assert model_used == "openai:gemini-2.0-flash"
     print("generate_draft PASSED")
 
     print("\nTesting reflect_on_draft...")
@@ -47,7 +47,7 @@ def test_solution():
     print(f"Prompt sent: {prompt_sent}")
     print(f"Model used: {model_used}")
     assert draft_content in prompt_sent
-    assert model_used == "google:gemini-1.5-flash"
+    assert model_used == "openai:gemini-2.0-flash"
     print("reflect_on_draft PASSED")
 
     print("\nTesting revise_draft...")

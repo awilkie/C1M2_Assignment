@@ -73,7 +73,7 @@ import unittests
 
 # GRADED FUNCTION: generate_draft
 
-def generate_draft(topic: str, model: str = "google:gemini-1.5-flash") -> str: 
+def generate_draft(topic: str, model: str = "openai:gemini-2.0-flash") -> str: 
     
     ### START CODE HERE ###
 
@@ -129,7 +129,7 @@ unittests.test_generate_draft(generate_draft)
 
 # GRADED FUNCTION: reflect_on_draft
 
-def reflect_on_draft(draft: str, model: str = "google:gemini-1.5-flash") -> str:
+def reflect_on_draft(draft: str, model: str = "openai:gemini-2.0-flash") -> str:
 
     ### START CODE HERE ###
 
@@ -183,7 +183,7 @@ unittests.test_reflect_on_draft(reflect_on_draft)
 
 # GRADED FUNCTION: revise_draft
 
-def revise_draft(original_draft: str, reflection: str, model: str = "google:gemini-1.5-flash") -> str:
+def revise_draft(original_draft: str, reflection: str, model: str = "openai:gemini-2.0-flash") -> str:
 
     ### START CODE HERE ###
 
